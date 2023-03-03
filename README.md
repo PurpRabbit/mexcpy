@@ -42,3 +42,37 @@ Example
     mexc = MexcAPI(API_KEY, SECRET_KEY)
     result = mexc.get_account_information().json()
     print(result)
+
+
+Public methods
+--------------
+
+    get_server_time()
+    get_exchange_information()
+    get_order_book()
+    get_recent_trades()
+    get_current_average_price()
+    get_price_change_statistics()
+    get_symbol_price_ticker()
+    get_order_book_ticker()
+
+
+Private methods
+---------------
+
+    get_account_information()
+    create_new_order()
+    cancel_order()
+    cancel_orders_on_symbol()
+    check_order_status()
+    get_current_open_orders()
+    get_all_orders()
+    get_account_trade_list()
+
+    get_currency_information()
+    withdraw()
+    get_deposit_history()
+    get_withdraw_history()
+    generate_deposit_address()
+    get_deposit_address()
+    universal_transfer()

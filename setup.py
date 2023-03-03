@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mexcpy",
-    version="1.0.1",
+    version="0.0.1",
     author="PurpRabbit",
     author_email="lysovich28@gmail.com",
     description="Python3 Mexc API wrapper",
