@@ -33,7 +33,7 @@ Example
     data = MexcAPI.get_current_average_price()
     print(data.symbol, data.priceChange, data.priceChangePercent)
     # Attributes like symbol, priceChange, priceChangePercent are adding dynamically after method execution.
-    # You can find all possible attributes in [documentation](https://mxcdevelop.github.io/apidocs/spot_v3_en/#introduction)
+    # You can find all possible attributes in documentation
     
     
     # Private endpoints example
