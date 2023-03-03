@@ -8,7 +8,7 @@ from .endpoints import *
 class MarketData(BaseApi):
     @classmethod
     def get_server_time(cls) -> APIResponse:
-        response = requests.get(cls.BASE_URL + check_server_time)
+        response = requests.get(cls._BASE_URL + check_server_time)
         return APIResponse(response.json(), 'Server time')
 
     @classmethod
@@ -24,7 +24,7 @@ class MarketData(BaseApi):
         elif isinstance(symbol, str):
             params['symbol'] = symbol
         
-        response = requests.get(cls.BASE_URL + exchange_information, params=params)
+        response = requests.get(cls._BASE_URL + exchange_information, params=params)
         return APIResponse(response.json(), 'Exchange information')
 
     @classmethod
@@ -42,7 +42,7 @@ class MarketData(BaseApi):
             :asks: list[Ask[Price, Quantity]]
         """
         params = {'symbol': symbol, 'limit': limit}
-        response = requests.get(cls.BASE_URL + order_book, params=params)
+        response = requests.get(cls._BASE_URL + order_book, params=params)
         return APIResponse(response.json(), 'Order book')
     
     @classmethod
@@ -64,7 +64,7 @@ class MarketData(BaseApi):
             :isBestMatch:
         """
         params = {'symbol': symbol, 'limit': limit}
-        response = requests.get(cls.BASE_URL + recent_trades, params=params)        
+        response = requests.get(cls._BASE_URL + recent_trades, params=params)        
         return APIResponse(response.json(), 'Recent trades')
 
     @classmethod
@@ -80,7 +80,7 @@ class MarketData(BaseApi):
             :price:
         """
         params = {'symbol': symbol}
-        response = requests.get(cls.BASE_URL + current_avg_price, params=params)        
+        response = requests.get(cls._BASE_URL + current_avg_price, params=params)        
         return APIResponse(response.json(), 'Average price')
     
     @classmethod
@@ -113,7 +113,7 @@ class MarketData(BaseApi):
             :count:
         """
         params = {'symbol': symbol}
-        response = requests.get(cls.BASE_URL + price_change_statistics, params=params)        
+        response = requests.get(cls._BASE_URL + price_change_statistics, params=params)        
         return APIResponse(response.json(), 'Price change statistic')
 
     @classmethod
@@ -129,7 +129,7 @@ class MarketData(BaseApi):
             :price: Last price
         """
         params = {'symbol': symbol}
-        response = requests.get(cls.BASE_URL + symbol_price_ticker, params=params)   
+        response = requests.get(cls._BASE_URL + symbol_price_ticker, params=params)   
         return APIResponse(response.json(), 'Symbol price ticker')
 
     @classmethod
@@ -148,5 +148,5 @@ class MarketData(BaseApi):
             :askQty: Best ask quantity
         """
         params = {'symbol': symbol}
-        response = requests.get(cls.BASE_URL + order_book_ticker, params=params)   
+        response = requests.get(cls._BASE_URL + order_book_ticker, params=params)   
         return APIResponse(response.json(), 'Symbol price ticker')

@@ -16,7 +16,7 @@ Start
 
 Installation:
 
-    git clone https://github.com/PurpRabbit/mexcpy
+    pip install mexcpy
 
 
 Example
@@ -30,10 +30,10 @@ Example
     print(data)
     
     # Instead of usind the json() method you can refer to attributes of ResponseAPI class instance
-    data = MexcAPI.get_current_average_price()
-    print(data.symbol, data.priceChange, data.priceChangePercent)
     # Attributes like symbol, priceChange, priceChangePercent are adding dynamically after method execution.
     # You can find all possible attributes in documentation
+    data = MexcAPI.get_current_average_price()
+    print(data.symbol, data.priceChange, data.priceChangePercent)
     
     
     # Private endpoints example

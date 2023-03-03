@@ -1,3 +1,3 @@
 class BaseApi:
-    BASE_URL = 'https://api.mexc.com'
+    _BASE_URL = 'https://api.mexc.com'
     

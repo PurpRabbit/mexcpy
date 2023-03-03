@@ -22,7 +22,7 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#account-information
         """
         signed_params = self._get_signed_params()
-        response = requests.get(self.BASE_URL + account_information, headers=self._headers, params=signed_params)
+        response = requests.get(self._BASE_URL + account_information, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'Account information')
     
     def create_new_order(self, symbol: str, side: OrderSide, type: OrderType, quantity: int=None,
@@ -34,7 +34,7 @@ class SpotAccount(BaseApi, Signature):
         """
 
         signed_params = self._get_signed_params(locals())
-        response = requests.post(self.BASE_URL + new_order, headers=self._headers, params=signed_params)
+        response = requests.post(self._BASE_URL + new_order, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'New order')
     
     def cancel_order(self, symbol: str, orderId: str=None, origClientOrderId: str=None, newClientOrderId: str=None) -> APIResponse:
@@ -45,7 +45,7 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#cancel-order
         """
         signed_params = self._get_signed_params(locals())
-        response = requests.delete(self.BASE_URL + cancel_order, headers=self._headers, params=signed_params)
+        response = requests.delete(self._BASE_URL + cancel_order, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'Cancel order')
     
     def cancel_orders_on_symbol(self, symbol: str) -> APIResponse:
@@ -57,7 +57,7 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#cancel-all-open-orders-on-a-symbol
         """
         signed_params = self._get_signed_params(locals())
-        response = requests.delete(self.BASE_URL + cancel_all_symbol_orders, headers=self._headers, params=signed_params)
+        response = requests.delete(self._BASE_URL + cancel_all_symbol_orders, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'Cancel open orders')
     
     def check_order_status(self, symbol: str, origClientOrderId: str=None, orderId: str=None) -> APIResponse:
@@ -67,7 +67,7 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#query-order
         """
         signed_params = self._get_signed_params(locals())
-        response = requests.get(self.BASE_URL + query_order, headers=self._headers, params=signed_params)
+        response = requests.get(self._BASE_URL + query_order, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'Order status')
     
     def get_current_open_orders(self, symbol: str) -> APIResponse:
@@ -77,7 +77,7 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#current-open-orders
         """
         signed_params = self._get_signed_params(locals())
-        response = requests.get(self.BASE_URL + current_open_orders, headers=self._headers, params=signed_params)
+        response = requests.get(self._BASE_URL + current_open_orders, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'Current open orders')
     
     def get_all_orders(self, symbol: str, startTime: int=None, endTime: int=None, limit: int=None) -> APIResponse:
@@ -89,7 +89,7 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#all-orders
         """
         signed_params = self._get_signed_params(locals())
-        response = requests.get(self.BASE_URL + all_orders, headers=self._headers, params=signed_params)
+        response = requests.get(self._BASE_URL + all_orders, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'All orders')
     
     def get_account_trade_list(self, symbol: str, orderId: str=None, startTime: int=None, endTime: int=None, limit: int=None) -> APIResponse:
@@ -101,6 +101,6 @@ class SpotAccount(BaseApi, Signature):
         Link: https://mxcdevelop.github.io/apidocs/spot_v3_en/#account-trade-list
         """
         signed_params = self._get_signed_params(locals())
-        response = requests.get(self.BASE_URL + trade_list, headers=self._headers, params=signed_params)
+        response = requests.get(self._BASE_URL + trade_list, headers=self._headers, params=signed_params)
         return APIResponse(response.json(), 'Account trade list')
     
