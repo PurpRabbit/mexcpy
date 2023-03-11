@@ -16,7 +16,7 @@ Start
 
 Installation:
 
-    pip install mexcpy
+    git clone https://github.com/PurpRabbit/mexcpy
 
 
 Example
