@@ -15,9 +15,11 @@ class Signature:
     def _get_signed_params(self, params: dict=None) -> dict:
         if params and 'self' in params:
             params.pop('self')
+            params = {key:value for key, value in params.items() if value is not None}
         parameters = params.copy() if params is not None else dict()
         parameters['recvWindow'] = 60000
         parameters['timestamp'] = int(time.time()*1000)
         query_string = urlencode(parameters)
         parameters['signature'] = hmac.new(self.__secret_key.encode('utf-8'), query_string.encode('utf-8'), hashlib.sha256).hexdigest()
+        print(parameters)
         return urlencode(parameters)
