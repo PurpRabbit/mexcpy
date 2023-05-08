@@ -1,6 +1,6 @@
-from .api.market_data import MarketData
-from .api.spot_account import SpotAccount
-from .api.wallet_data import Wallet
+from .api import MarketData
+from .api import SpotAccount
+from .api import Wallet
 
 
 class MexcAPI(MarketData, SpotAccount, Wallet):

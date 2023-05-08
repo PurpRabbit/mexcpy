@@ -1,8 +1,8 @@
 import requests
 
-from .base_api import BaseApi
-from .api_response import APIResponse
-from .endpoints import *
+from mexcpy.api.base_api import BaseApi
+from mexcpy.api.api_response import APIResponse
+from mexcpy.api.endpoints import *
 
 
 class MarketData(BaseApi):

@@ -1,10 +1,10 @@
 import requests
 from typing import Literal
 
-from .base_api import BaseApi
-from .signature import Signature
-from .api_response import APIResponse
-from .endpoints import *
+from mexcpy.api.base_api import BaseApi
+from mexcpy.api.signature import Signature
+from mexcpy.api.api_response import APIResponse
+from mexcpy.api.endpoints import *
 
 
 AccountType = ['SPOT', 'FUTURES', 'ISOLATED_MARGIN']
